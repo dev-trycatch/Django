@@ -1,0 +1,13 @@
+{% extends 'category_base.html' %}
+{% block content %}
+<div class="card col-md-4 mx-auto shadow">
+    <div class="card-header bg-warning">Update Product</div>
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success w-100">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

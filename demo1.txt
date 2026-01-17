@@ -1,0 +1,21 @@
+veg = Receipe.objects.all().order_by('rec_view_count')
+veg = Receipe.objects.all().order_by('-rec_view_count')
+
+veg = Receipe.objects.all().order_by('-rec_view_count')[0:100]
+
+Receipe.objects.all().filter(rec_view_count__gte = 72)
+Receipe.objects.all().filter(rec_view_count__lte = 72)[0]
+Receipe.objects.all().filter(rec_view_count__gte = 72)[0]
+Receipe.objects.all().filter(rec_view_count__gte = 72)[0].rec_view_count
+
+Rest Api 
+REpresentational State Transfer 
+
+It is standard way exchange data between client and server using http method.
+
+DRF lie in between client and server 
+
+Method
+Get ,post,Put,Patch,Delete
+
+

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block start %}
+    <div class="container ">
+        <form class="col-6 mx-auto" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Reciepes Name</label>
+                <input type="text" name='rec_name' required class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Reciepes Description</label>
+                <textarea name="rec_desc" id="" class="form-control" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Reciepes Images</label>
+                <input type="file" name="rec_images" class="form-control" required id="exampleInputEmail1">
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="mt-5">
+            <div class="mx-auto col-6">
+                <form action="">
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Search Food</label>
+                        <input type="text" name='search' class="form-control" id="exampleInputEmail1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+        </div>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Recipe Name</th>
+                    <th scope="col">Recipe Description</th>
+                    <th scope="col">Recipe Image</th>
+                    <th scope="col">Actions</th>
+            </thead>
+            </tr>
+            <tbody>
+                {% for rec in recipes %}
+                <tr>
+                    <td scope="row">{{rec.id}}</td>
+                    <td>{{rec.rec_name}}</td>
+                    <td>{{rec.rec_desc}}</td>
+                    <td> <img height="100px" src="/media/{{rec.rec_images}}" alt=""> </td>
+                    <td><a href="/delete-receipe/{{rec.id}}" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/update-receipe/{{rec.id}}" class="btn btn-success">Update</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+
+    {% endblock %}

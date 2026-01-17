@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+    <h1>Login</h1>
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {% comment %} {{ form.as_p}} {% endcomment %} 
+        <p>Username: <input type="text" name="username" id=""></p>
+        <p>password: <input type="password" name="password" id=""></p>
+
+        <button type="submit">Login</button>
+    </form>
+
+{% endblock %}
