@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'myapp6',
     # 'myapp7',
     # 'myapp7.apps.Myapp7Config'
-    'myapp9.apps.Myapp9Config'
+    # 'myapp9.apps.Myapp9Config'
     # 'crispy_forms',
     # 'crispy_bootstrap5',
+    'api1',
+    'rest_framework'
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
