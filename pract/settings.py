@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     # 'myapp9.apps.Myapp9Config'
     # 'crispy_forms',
     # 'crispy_bootstrap5',
-    'api1',
+    # 'api1',
+    'api2',
     'rest_framework'
 ]
 
