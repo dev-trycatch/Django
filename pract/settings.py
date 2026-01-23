@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     # 'crispy_forms',
     # 'crispy_bootstrap5',
     # 'api1',
-    'api2',
+    # 'api2',
+    'api3',
     'rest_framework'
 ]
 

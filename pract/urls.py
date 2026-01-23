@@ -34,7 +34,8 @@ urlpatterns = [
     # path('',include('myapp8.urls')),
     # path('',include('myapp9.urls')),
     # path('',include('api1.urls')),
-    path('',include('api2.urls')),
+    # path('',include('api2.urls')),
+    path('',include('api3.urls')),
 ]
 
 if settings.DEBUG:
