@@ -5,7 +5,6 @@ from rest_framework import status
 from .models import *
 from .serializers import StudentSerializer
 
-
 class StudentAPI(APIView):
     # read all or single data
     def get(self,request,pk=None):

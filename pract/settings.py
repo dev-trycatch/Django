@@ -51,8 +51,14 @@ INSTALLED_APPS = [
     # 'crispy_bootstrap5',
     # 'api1',
     # 'api2',
-    'api3',
-    'rest_framework'
+    # 'api3',
+    # 'api4',
+    # 'rest_framework',
+    # 'rest_framework.authtoken'
+
+    'api5',
+    'rest_framework',
+    'rest_framework_simplejwt'
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -161,3 +167,38 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = "devshigvan28@gmail.com"
 EMAIL_HOST_PASSWORD = "bvktftkeaazhkfmx"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         # 'rest_framework.authentication.BasicAuthentication',
+#         # 'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         # 'rest_framework.permissions.IsAuthenticated',
+#         # 'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+#         'rest_framework.permissions.IsAuthenticated',
+#     ]
+# }
+
+# access token  valid for 5 minutes
+# refresh token  valid for 1 day
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
+}
+
+
+
+# from datetime import timedelta
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+#     "REFRESH_TOKEN_LIFETIME" : timedelta(days=1),
+# }
+

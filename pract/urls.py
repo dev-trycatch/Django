@@ -19,7 +19,10 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,7 +38,11 @@ urlpatterns = [
     # path('',include('myapp9.urls')),
     # path('',include('api1.urls')),
     # path('',include('api2.urls')),
-    path('',include('api3.urls')),
+    # path('',include('api3.urls')),
+    # path('',include('api4.urls')),
+    path('',include('api5.urls')),
+    path('api/token/',TokenObtainPairView.as_view(),name='token_obtain_pair'),
+    path('api/token/refresh/',TokenRefreshView.as_view(),name='token_refresh_pair'),
 ]
 
 if settings.DEBUG:
